@@ -25,7 +25,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
       with:
-        context: .
+        context: ../
         push: true
         tags: gocheetah/cheetah:latest
         platforms: linux/${{ matrix.platform }}  # 根据 matrix 配置的架构动态构建
