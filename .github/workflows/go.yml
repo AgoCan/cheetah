@@ -17,5 +17,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: ls
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        push: false
+        tags: gocheetah/cheetah:latest
+        platforms: linux/${{ matrix.platform }}  # 根据 matrix 配置的架构动态构建
+        file: Dockerfile  # 指定 Dockerfile 路径
