@@ -26,6 +26,6 @@ jobs:
         context: .
         push: false
         tags: gocheetah/cheetah:latest
-        platforms: linux/amd64,linux/arm64  # 根据 matrix 配置的架构动态构建
         file: Dockerfile  # 指定 Dockerfile 路径
+
 
